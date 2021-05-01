@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.example.wumbell.R
 import com.example.wumbell.databinding.ConnectOptionsBinding
 import com.example.wumbell.ui.qrCode.QrCodeActivity
+import com.example.wumbell.ui.splash.WorkoutActivity
 
 
 class ConnectOptions : Fragment() {
@@ -25,6 +26,11 @@ class ConnectOptions : Fragment() {
     ): View {
         val binding= DataBindingUtil.inflate<ConnectOptionsBinding>(inflater,R.layout.connect_options, container, false)
 
+        binding.connectButton.setOnClickListener {
+            val workoutIntent=Intent(context,WorkoutActivity::class.java)
+            startActivity(workoutIntent)
+            activity?.finish()
+        }
         binding.scanQr.setOnClickListener {
             if (ContextCompat.checkSelfPermission(requireContext(),
                     Manifest.permission.CAMERA) ==
@@ -37,6 +43,7 @@ class ConnectOptions : Fragment() {
 
 
         }
+
         return binding.root
     }
     private fun startQrActivity(){
@@ -72,4 +79,15 @@ class ConnectOptions : Fragment() {
 
         }
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        val startQr=activity?.intent?.getBooleanExtra("qrconnect",false)
+//        startQr?.let {
+//            if(it)
+//                startQrActivity()
+//        }
+//    }
+
+
 }

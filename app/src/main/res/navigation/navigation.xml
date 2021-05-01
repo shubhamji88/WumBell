@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
-    app:startDestination="@id/connectOptions">
+    app:startDestination="@id/connectedFragment">
     <fragment
-        android:id="@+id/connectOptions"
-        android:name="com.example.wumbell.screens.connectOptions.ConnectOptions"
-        android:label="ConnectOptions" />
+        android:id="@+id/connectedFragment"
+        android:name="com.example.wumbell.screens.workout.connectedFragment"
+        android:label="connectedFragment" />
 </navigation>

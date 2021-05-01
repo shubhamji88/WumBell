@@ -38,7 +38,7 @@
 
 
         <Button
-            android:id="@+id/buttonwifi"
+            android:id="@+id/connectButton"
             android:layout_width="250dp"
             android:layout_height="42dp"
             android:layout_marginTop="32dp"
@@ -115,7 +115,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonwifi"
+            app:layout_constraintTop_toBottomOf="@+id/connectButton"
             app:layout_constraintVertical_bias="0.43" />
 
     </androidx.constraintlayout.widget.ConstraintLayout></layout>
