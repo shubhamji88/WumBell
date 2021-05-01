@@ -2,6 +2,8 @@ package com.example.wumbell.screens.connectOptions
 
 
 import android.Manifest
+import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.wumbell.R
 import com.example.wumbell.databinding.ConnectOptionsBinding
+import com.example.wumbell.ui.qrCode.QrCodeActivity
 
 
 class ConnectOptions : Fragment() {
@@ -26,7 +29,7 @@ class ConnectOptions : Fragment() {
             if (ContextCompat.checkSelfPermission(requireContext(),
                     Manifest.permission.CAMERA) ==
                 PackageManager.PERMISSION_GRANTED) {
-//                startQrActivity()
+                startQrActivity()
 
             }else{
                 requestPermissions(arrayOf(Manifest.permission.CAMERA),12)
@@ -36,7 +39,19 @@ class ConnectOptions : Fragment() {
         }
         return binding.root
     }
+    private fun startQrActivity(){
+        val qrIntent= Intent(context, QrCodeActivity::class.java)
+        startActivityForResult(qrIntent,3)
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode== RESULT_OK && requestCode==3 ){
+            val result=data?.getStringExtra("result")
+            Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
+        }else
+            Toast.makeText(context, "Try Again!", Toast.LENGTH_SHORT).show()
+    }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
                                             grantResults: IntArray) {
@@ -47,7 +62,7 @@ class ConnectOptions : Fragment() {
                     if ((ContextCompat.checkSelfPermission(requireContext(),
                             Manifest.permission.CAMERA) ==
                                 PackageManager.PERMISSION_GRANTED)) {
-//                        startQrActivity()
+                        startQrActivity()
                     }
                 } else {
                     Toast.makeText(requireContext(), "Permission Denied!", Toast.LENGTH_SHORT).show()

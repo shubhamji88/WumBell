@@ -20,6 +20,11 @@
             android:name="com.example.wumbell.screens.connectOptions.ConnectActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.wumbell.ui.qrCode.QrCodeActivity"
+            android:configChanges="orientation"
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
