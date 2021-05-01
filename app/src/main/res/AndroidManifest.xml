@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.wumbell.MainActivity"
+            android:name="com.example.wumbell.screens.connectOptions.ConnectActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity

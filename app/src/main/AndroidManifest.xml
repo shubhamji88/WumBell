@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wumbell">
-
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.wumbell.MainActivity"
+            android:name="com.example.wumbell.screens.connectOptions.ConnectActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
     </application>

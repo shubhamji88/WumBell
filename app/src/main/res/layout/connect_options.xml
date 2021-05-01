@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan QR Code"
+            android:textSize="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="547dp"
+            android:layout_height="484dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@mipmap/bgshade" />
+
+
+        <Button
+            android:id="@+id/buttonwifi"
+            android:layout_width="250dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="32dp"
+            android:drawableLeft="@drawable/ic_baseline_wifi_24"
+            android:text="Connect"
+            app:backgroundTint="#223391"
+            app:layout_constraintEnd_toEndOf="@+id/outlinedTextdField"
+            app:layout_constraintStart_toStartOf="@+id/outlinedTextdField"
+            app:layout_constraintTop_toBottomOf="@+id/outlinedTextdField" />
+
+        <ImageView
+            android:id="@+id/scanQr"
+            android:layout_width="192dp"
+            android:layout_height="192dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            android:background="@drawable/ic_vector_qr_code" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextdField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:boxStrokeColor="#18359D"
+            app:layout_constraintEnd_toEndOf="@+id/text"
+            app:layout_constraintStart_toStartOf="@+id/text"
+            app:layout_constraintTop_toBottomOf="@+id/text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/codeInput"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Enter Code:"
+                android:inputType="textPassword"
+                android:padding="4dp"
+                android:textColor="#000000"
+                android:textSize="26sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="OR"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/scanQr"
+            app:layout_constraintStart_toStartOf="@+id/scanQr"
+            app:layout_constraintTop_toBottomOf="@+id/scanQr" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView14"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="Enter code:"-->
+<!--            android:textSize="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/imageView6"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/imageView6"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/text" />-->
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:gravity="center"
+            android:text="Take 30 minutes of bodybuilding every day to get physically fit and healthy."
+            android:textColor="@color/purple_200"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonwifi"
+            app:layout_constraintVertical_bias="0.43" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout></layout>

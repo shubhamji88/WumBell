@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.wumbell.MainActivity
+import com.example.wumbell.screens.connectOptions.ConnectActivity
 import com.example.wumbell.R
 import com.example.wumbell.databinding.Startuppage2Binding
 
@@ -25,7 +25,7 @@ class IntroScreen2 : Fragment() {
             view?.findNavController()?.navigate(R.id.action_introScreen1_to_introScreen2)
         }
         binding.button.setOnClickListener {
-            val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(context, ConnectActivity::class.java)
             startActivity(intent)
             this.activity?.finish()
         }
