@@ -75,7 +75,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter Code:"
-                android:inputType="textPassword"
                 android:padding="4dp"
                 android:textColor="#000000"
                 android:textSize="26sp" />
