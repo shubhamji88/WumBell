@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/splash_navigation"
+    app:startDestination="@id/startupScreen">
+
+    <fragment
+        android:id="@+id/startupScreen"
+        android:name="com.example.wumbell.ui.splash.StartupScreen"
+        android:label="StartupScreen" >
+        <action
+            android:id="@+id/action_startupScreen_to_introScreen1"
+            app:destination="@id/introScreen1"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/introScreen1"
+        android:name="com.example.wumbell.ui.splash.IntroScreen1"
+        android:label="IntroScreen1" >
+        <action
+            android:id="@+id/action_introScreen1_to_introScreen2"
+            app:destination="@id/introScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/introScreen2"
+        android:name="com.example.wumbell.ui.splash.IntroScreen2"
+        android:label="IntroScreen2" />
+</navigation>
