@@ -35,7 +35,7 @@
         android:layout_height="36dp"
         android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="Take 30 minutes of bodybuilding every day to get physically fit and healthy."
+        android:text="The last three or four reps is what makes the muscle grow."
         android:textColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"

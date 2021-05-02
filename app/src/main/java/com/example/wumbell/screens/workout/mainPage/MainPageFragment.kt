@@ -58,6 +58,8 @@ class MainPageFragment : Fragment() {
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>,
                                         view: View?, position: Int, id: Long) {
+                if(position==0)
+                    submitList("")
                 selectedEquip= equipmentList[position]
                 if(position==1 || position==2)
                     submitList(bodypartList[position])

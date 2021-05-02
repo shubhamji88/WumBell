@@ -55,7 +55,7 @@
         android:layout_height="36dp"
         android:layout_marginTop="36dp"
         android:gravity="center"
-        android:text="Take 30 minutes of bodybuilding every day to get physically fit and healthy."
+        android:text="All progress takes place outside the comfort zone."
         android:textColor="#3F51B5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -41,8 +41,6 @@ class ConnectedFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>,
                                         view: View?, position: Int, id: Long) {
                 equipmentPos=position
-                if(position!=0)
-                Toast.makeText(context, "Selected equipment: "+equipmentList[position], Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -54,8 +52,6 @@ class ConnectedFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>,
                                         view: View?, position: Int, id: Long) {
                 bodyPos=position
-                if(position!=0)
-                Toast.makeText(context,"Selected body part: "+ bodypartList[position], Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
