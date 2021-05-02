@@ -65,6 +65,8 @@ class ConnectOptions : Fragment() {
     private fun validateCode(code: String?) {
         if(code=="ruhack") {
             viewModel.checkOnline()
+        }else{
+            Toast.makeText(context, "Wrong Code!", Toast.LENGTH_SHORT).show()
         }
     }
 
