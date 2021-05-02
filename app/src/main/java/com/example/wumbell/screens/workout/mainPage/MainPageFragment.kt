@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.wumbell.R
 import com.example.wumbell.data.BodyPart
 import com.example.wumbell.data.ExerciseData
@@ -20,6 +21,7 @@ import com.example.wumbell.databinding.WorkoutMainPageBinding
 
 class MainPageFragment : Fragment() {
     private lateinit var exerciseAdapter:ExerciseAdapter
+    private lateinit var filter:MutableList<BodyPart>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,36 +33,32 @@ class MainPageFragment : Fragment() {
 
     private fun updateUI(binding: WorkoutMainPageBinding) {
         val exerciseList=binding.recyclerView
-        exerciseAdapter=ExerciseAdapter(ClickListener{ index->
-            Toast.makeText(context, "Index: $index", Toast.LENGTH_SHORT).show()
-//            view?.findNavController().navigate()
-        })
-        submitList("")
-        exerciseList.adapter=exerciseAdapter
+
         val spinnerArgs=MainPageFragmentArgs.fromBundle(requireArguments())
         val equipmentSpinner =binding.equipmentSpinner
         val bodySpinner=binding.bodyPartSpinner
+
         equipmentSpinner.adapter=
             ArrayAdapter(requireContext(), R.layout.spinner_layout,equipmentList)
         bodySpinner.adapter=
             ArrayAdapter(requireContext(), R.layout.spinner_layout,bodypartList)
         equipmentSpinner.setSelection(spinnerArgs.equipment)
         bodySpinner.setSelection(spinnerArgs.body)
-//        equipmentSpinner.onItemSelectedListener = object :
-//            AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>,
-//                                        view: View, position: Int, id: Long) {
-//
-//            }
-//
-//            override fun onNothingSelected(parent: AdapterView<*>) {
-//                // write code to perform some action
-//            }
-//        }
+
+
+        var selectedEquip= equipmentList[spinnerArgs.equipment]
+        exerciseAdapter=ExerciseAdapter(ClickListener { index ->
+            view?.findNavController()?.navigate(MainPageFragmentDirections.actionMainPageFragmentToMenuPageFragment(index,selectedEquip))
+        })
+        exerciseList.adapter=exerciseAdapter
+
+        submitList("")
+
         bodySpinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>,
-                                        view: View, position: Int, id: Long) {
+                                        view: View?, position: Int, id: Long) {
+                selectedEquip= equipmentList[position]
                 if(position==1 || position==2)
                     submitList(bodypartList[position])
                 else if(position!=0)
@@ -75,17 +73,16 @@ class MainPageFragment : Fragment() {
     }
     fun submitList(name: String?) {
         if(name.isNullOrEmpty()) {
-            exerciseAdapter.submitList(ExerciseData.data)
-            exerciseAdapter.notifyDataSetChanged()
+            filter=ExerciseData.data
         }
         else{
-            val filter= mutableListOf<BodyPart>()
+            filter= mutableListOf<BodyPart>()
             ExerciseData.data.forEach {
                 if(it.name.toLowerCase().contains(name.toLowerCase()))
                     filter.add(it)
             }
-            exerciseAdapter.submitList(filter)
-            exerciseAdapter.notifyDataSetChanged()
         }
+        exerciseAdapter.submitList(filter)
+        exerciseAdapter.notifyDataSetChanged()
     }
 }

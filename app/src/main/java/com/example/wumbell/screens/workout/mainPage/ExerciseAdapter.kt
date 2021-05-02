@@ -33,7 +33,7 @@ class ExerciseAdapter(val clickListner: ClickListener): ListAdapter<BodyPart, Re
             binding.click=clickListnerimg
             binding.data=item
             binding.nextbutton.setOnClickListener {
-                clickListnerimg.onClick(adapterPosition)
+                clickListnerimg.onClick(item.id)
             }
             binding.executePendingBindings()
         }

@@ -35,5 +35,12 @@
     <fragment
         android:id="@+id/menuPageFragment"
         android:name="com.example.wumbell.screens.workout.menu.MenuPageFragment"
-        android:label="MenuPageFragment" />
+        android:label="MenuPageFragment" >
+        <argument
+            android:name="index"
+            app:argType="integer" />
+        <argument
+            android:name="equip"
+            app:argType="string" />
+    </fragment>
 </navigation>

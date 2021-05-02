@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
@@ -67,9 +67,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{data.list[0].fieldName}"
                     android:textColor="@color/black"
-                    android:text="bfdbdf"
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -78,11 +78,12 @@
                     android:id="@+id/field1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="{data.list[1].fieldName}"
+                    android:layout_marginBottom="16dp"
+                    android:text="@{@string/reps_format(data.list[0].fieldCount)}"
                     android:textSize="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/name1"
                     app:layout_constraintTop_toBottomOf="@+id/name1" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -133,10 +134,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:text="bfdbdf"
-                                android:textSize="16sp"
+                                android:layout_marginTop="16dp"
+                                android:text="@{data.list[3].fieldName}"
                                 android:textColor="@color/black"
+                                android:textSize="16sp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -146,8 +147,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
-                                android:text="{data.list[1].fieldName}"
+                                android:layout_marginBottom="16dp"
+                                android:text="@{@string/reps_format(data.list[3].fieldCount)}"
                                 android:textSize="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/name4" />
 
@@ -200,8 +203,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:text="bfdbdf"
+                                android:layout_marginTop="16dp"
+                                android:text="@{data.list[2].fieldName}"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -213,8 +216,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
-                                android:text="{data.list[1].fieldName}"
+                                android:layout_marginBottom="16dp"
+                                android:text="@{@string/reps_format(data.list[2].fieldCount)}"
                                 android:textSize="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/name3" />
 
@@ -267,9 +272,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
+                                android:layout_marginTop="16dp"
+                                android:text="@{data.list[1].fieldName}"
                                 android:textColor="@color/black"
-                                android:layout_marginTop="8dp"
-                                android:text="bfdbdf"
                                 android:textSize="16dp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -280,8 +285,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
-                                android:text="{data.list[1].fieldName}"
+                                android:layout_marginBottom="16dp"
+                                android:text="@{@string/reps_format(data.list[1].fieldCount)}"
                                 android:textSize="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/name2" />
 
@@ -318,21 +325,26 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:gravity="left"
             android:text="Equipment"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView6"
-            app:layout_constraintStart_toStartOf="@+id/guideline3" />
+            app:layout_constraintBottom_toTopOf="@+id/equip"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/equip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="16dp"
             android:gravity="left"
-            android:text="@{data.name}"
+            android:textColor="#18359D"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="@+id/guideline3" />
@@ -341,9 +353,11 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:gravity="left"
             android:text="Bodypart"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -353,9 +367,12 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:gravity="left"
-            android:text="Chest"
+
+            android:text="@{data.name}"
+            android:textColor="#18359D"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />

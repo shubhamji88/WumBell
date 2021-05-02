@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.wumbell.R
+import com.example.wumbell.data.ExerciseData
 import com.example.wumbell.databinding.WorkoutMenuBinding
 import com.example.wumbell.screens.workout.mainPage.ExerciseAdapter
 
@@ -23,8 +24,11 @@ class MenuPageFragment : Fragment() {
     }
 
     private fun updateUI(binding: WorkoutMenuBinding) {
-
-
+    val index=MenuPageFragmentArgs.fromBundle(requireArguments()).index
+        binding.data=ExerciseData.data[index]
+    val selectedEquipment=MenuPageFragmentArgs.fromBundle(requireArguments())
+        binding.equip.text=selectedEquipment.equip
     }
+
 
 }
