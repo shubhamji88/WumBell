@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.wumbell.R
 import com.example.wumbell.data.ExerciseData
 import com.example.wumbell.databinding.WorkoutMenuBinding
@@ -28,6 +29,19 @@ class MenuPageFragment : Fragment() {
         binding.data=ExerciseData.data[index]
     val selectedEquipment=MenuPageFragmentArgs.fromBundle(requireArguments())
         binding.equip.text=selectedEquipment.equip
+        binding.exer1.setOnClickListener {
+            view?.findNavController()?.navigate(MenuPageFragmentDirections.actionMenuPageFragmentToTimer(ExerciseData.data[index].list[0].fieldCount))
+        }
+        binding.exer2.setOnClickListener {
+            view?.findNavController()?.navigate(MenuPageFragmentDirections.actionMenuPageFragmentToTimer(ExerciseData.data[index].list[1].fieldCount))
+        }
+        binding.exer3.setOnClickListener {
+            view?.findNavController()?.navigate(MenuPageFragmentDirections.actionMenuPageFragmentToTimer(ExerciseData.data[index].list[2].fieldCount))
+        }
+        binding.exer4.setOnClickListener {
+            view?.findNavController()?.navigate(MenuPageFragmentDirections.actionMenuPageFragmentToTimer(ExerciseData.data[index].list[3].fieldCount))
+        }
+
     }
 
 

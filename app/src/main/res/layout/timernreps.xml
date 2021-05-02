@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="#707070"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/Pausebutton"
+        android:layout_width="268dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:text="RESET TIMER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <Button
+            android:id="@+id/startbutton"
+            android:layout_width="268dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="48dp"
+            android:visibility="invisible"
+            android:layout_marginEnd="63dp"
+            android:layout_marginRight="63dp"
+            android:text="START TIMER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="283dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="Take 30 minutes of bodybuilding every day to get physically fit and healthy."
+        android:textColor="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerText" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="62dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="63dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="717dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="212dp"
+        android:layout_height="211dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.398"
+        app:srcCompat="@mipmap/eclipse_foreground" />
+
+    <TextView
+        android:id="@+id/repsText"
+        android:layout_width="wrap_content"
+        android:layout_height="109dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#3F51B5"
+        android:textSize="96dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reps"
+            android:textColor="#3F51B5"
+            android:textSize="44dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="30sec"
+        android:textColor="#3F51B5"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
