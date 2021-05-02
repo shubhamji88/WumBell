@@ -36,18 +36,12 @@ class TimerViewModel(application: Application): AndroidViewModel(application) {
             }
         }
     }
-    var call=true
     val countDownTimer = object : CountDownTimer(31000, 1000) {
         override fun onTick(millisUntilFinished: Long) {
             val secondsInMilli: Long = 1000
             val elapsedSeconds = millisUntilFinished / secondsInMilli
             _timer.value= "$elapsedSeconds sec"
-            if(call) {
                 uiScope.launch { getCurrentReps() }
-                call=false
-            }else
-                call=true
-
         }
         override fun onFinish() {
             _timer.value="Completed!!"

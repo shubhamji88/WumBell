@@ -1,6 +1,7 @@
 package com.example.wumbell.screens.workout.menu
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.findNavController
 import com.example.wumbell.R
 import com.example.wumbell.data.ExerciseData
 import com.example.wumbell.databinding.WorkoutMenuBinding
+import com.example.wumbell.screens.ar.ARActivity
 import com.example.wumbell.screens.workout.mainPage.ExerciseAdapter
 
 
@@ -32,6 +34,18 @@ class MenuPageFragment : Fragment() {
         binding.exer1.setOnClickListener {
             view?.findNavController()?.navigate(MenuPageFragmentDirections.actionMenuPageFragmentToTimer(ExerciseData.data[index].list[0].fieldCount))
         }
+        binding.nextbutton1.setOnClickListener {
+            startAr()
+        }
+        binding.nextbutton2.setOnClickListener {
+            startAr()
+        }
+        binding.nextbutton.setOnClickListener {
+            startAr()
+        }
+        binding.nextbutton4.setOnClickListener {
+            startAr()
+        }
         binding.exer2.setOnClickListener {
             view?.findNavController()?.navigate(MenuPageFragmentDirections.actionMenuPageFragmentToTimer(ExerciseData.data[index].list[1].fieldCount))
         }
@@ -43,6 +57,9 @@ class MenuPageFragment : Fragment() {
         }
 
     }
-
+    fun startAr(){
+        val arIntent= Intent(context,ARActivity::class.java)
+        startActivity(arIntent)
+    }
 
 }
